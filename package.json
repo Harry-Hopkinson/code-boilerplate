@@ -1,0 +1,24 @@
+{
+  "name": "code-boilerplate",
+  "version": "1.0.0",
+  "description": "A vscode extension that generates a sample HelloWorld program based on the language of the file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harry-Hopkinson/code-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harry-Hopkinson/code-boilerplate/issues"
+  },
+  "homepage": "https://github.com/Harry-Hopkinson/code-boilerplate#readme",
+  "dependencies": {
+    "typescript": "^4.5.4",
+    "vscode": "^1.1.37"
+  }
+}
