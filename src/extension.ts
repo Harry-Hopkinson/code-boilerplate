@@ -5,8 +5,8 @@ export function activate(context: vscode.ExtensionContext) {
 	
 	let disposable = vscode.commands.registerCommand('code-boilerplate.CodeBoilerPlate', () => {
 	
-		// pop up asking for extension file type - user input
-		fileType = 
+		fileType =
+		fileName = vscode.window.activeTextEditor?.document.fileName;
 
 		if fileType === 'ts' {
 			vscode.window.activeTextEditor.edit(editBuilder => {
@@ -17,6 +17,11 @@ export function activate(context: vscode.ExtensionContext) {
 			vscode.window.activeTextEditor.edit(editBuilder => {
 				editBuilder.insert(new vscode.Position(0, 0), 'print("Hello World!")');
 			});
+		}
+		else if fileType === "js" {
+			vscode.window.activeTextEditor?.edit(editBuilder => {
+				editBuilder.insert(new vscode.Position(0,0), 'console.log("Hello World!")');
+			})
 		}
 		
 			vscode.window.showInformationMessage("Generating code boilerplate...");
