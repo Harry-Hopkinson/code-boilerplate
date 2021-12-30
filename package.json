@@ -49,6 +49,7 @@
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
+    "vscode": "^1.1.37",
     "watch": "^1.0.2"
   }
 }
