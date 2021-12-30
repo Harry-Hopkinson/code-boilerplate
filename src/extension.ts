@@ -14,9 +14,10 @@ export function activate(context: vscode.ExtensionContext) {
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('code-boilerplate.CodeBoilerPlate', () => {
-		
-		const fileType = vscode.window.activeTextEditor.document.languageId;
-		if fileType === 'typescript' {
+	
+		// pop up asking for extension file type
+
+		if fileType === '.ts' {
 			vscode.window.activeTextEditor.edit(editBuilder => {
 				editBuilder.insert(new vscode.Position(0, 0), 'console.log("Hello World!");');
 			});
