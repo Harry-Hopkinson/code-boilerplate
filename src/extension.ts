@@ -10,7 +10,13 @@ export function activate(context: vscode.ExtensionContext) {
 		const documentFileName = vscode.window.activeTextEditor?.document.fileName;
 
 		if (documentFileType === "javascript") {
-			
+		   return null;
+		}
+		else if (documentFileType === "python") {
+            return null;
+		}
+		else if (documentFileType === "typescript") {
+			return null;
 		}
 		
 		vscode.window.showInformationMessage("Generating code boilerplate...");
