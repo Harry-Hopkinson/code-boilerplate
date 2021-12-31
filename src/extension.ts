@@ -18,6 +18,15 @@ export function activate(context: vscode.ExtensionContext) {
 		else if (documentFileType === "typescript") {
 			return null;
 		}
+		else if (documentFileType === "csharp") {
+			return null;
+		}
+		else if (documentFileType === "c") {
+			return null;
+		}
+		else if (documentFileType === "cpp") {
+			return null;
+		}
 		
 		vscode.window.showInformationMessage("Generating code boilerplate...");
 	});
