@@ -9,8 +9,9 @@ export function activate(context: vscode.ExtensionContext) {
 		const documentFileType = vscode.window.activeTextEditor?.document.languageId;
 		const documentFileName = vscode.window.activeTextEditor?.document.fileName;
 
+		vscode.window.showInformationMessage("Generating your Code Boilerplate... ⌛")
 		if (documentFileType === "javascript") {
-		   return null;
+			return null;
 		}
 		else if (documentFileType === "python") {
             return null;
@@ -30,8 +31,6 @@ export function activate(context: vscode.ExtensionContext) {
 		else if (documentFileType === "java") {
 			return null;
 		}
-		
-		vscode.window.showInformationMessage("Generating code boilerplate...");
 	});
 
 	context.subscriptions.push(disposable);
