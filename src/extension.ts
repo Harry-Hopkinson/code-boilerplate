@@ -1,10 +1,12 @@
 import * as vscode from 'vscode';
 import "typescript";
 
+let statusBar : vscode.StatusBarItem;
+
 export function activate(context: vscode.ExtensionContext) {
 	console.log("code-boilerplate is active!");
 	
-	let disposable = vscode.commands.registerCommand('code-boilerplate.CodeBoilerPlate', () => {
+	const codeBoilerplate = vscode.commands.registerCommand('code-boilerplate.CodeBoilerPlate', () => {
 	
 		const documentFileType = vscode.window.activeTextEditor?.document.languageId;
 		const documentFileName = vscode.window.activeTextEditor?.document.fileName;
@@ -33,7 +35,10 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	});
 
-	context.subscriptions.push(disposable);
+	statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+	statusBar.command = codeBoilerplate;
+
+	context.subscriptions.push(codeBoilerplate);
 }
 
 // this method is called when your extension is deactivated
