@@ -27,6 +27,9 @@ export function activate(context: vscode.ExtensionContext) {
 		else if (documentFileType === "cpp") {
 			return null;
 		}
+		else if (documentFileType === "java") {
+			return null;
+		}
 		
 		vscode.window.showInformationMessage("Generating code boilerplate...");
 	});
