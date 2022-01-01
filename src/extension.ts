@@ -11,13 +11,19 @@ export function activate(context: vscode.ExtensionContext, { subscriptions }: vs
 
 		vscode.window.showInformationMessage("Generating your Code Boilerplate... ⌛")
 		if (documentFileType === "javascript") {
-			return null;
+			vscode.window.activeTextEditor.edit(editBuilder => {
+				editBuilder.insert(new vscode.Position(0, 0), 'console.log("Hello World!")');
+			});
 		}
 		else if (documentFileType === "python") {
-            return null;
+            vscode.window.activeTextEditor.edit(editBuilder => {
+				editBuilder.insert(new vscode.Position(0, 0), 'print("Hello World!")');
+			});
 		}
 		else if (documentFileType === "typescript") {
-			return null;
+			vscode.window.activeTextEditor.edit(editBuilder => {
+				editBuilder.insert(new vscode.Position(0, 0), 'console.log("Hello World!");');
+			});
 		}
 		else if (documentFileType === "csharp") {
 			return null;
