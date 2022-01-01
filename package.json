@@ -6,6 +6,7 @@
   "engines": {
     "vscode": "^1.63.0"
   },
+  "publisher": "HarryHopkinson",
   "icon": "images/icon.jpg",
   "repository": {
     "type": "git",
