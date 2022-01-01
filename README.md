@@ -1,5 +1,29 @@
 # Code Boilerplate
 
+<h1 align="center">
+  <br>
+  <a href="https://marketplace.visualstudio.com/items?itemName=HarryHopkinson.code-boilerplate&ssr=false#overview">
+    <img src="https://raw.githubusercontent.com/Harry-Hopkinson/code-boilerplate/master/images/icon.jpg">
+  </a>
+  <br>
+  code-boilerplate
+  <br>
+</h1>
+
+<h4 align="center">A Hello World Generator for VsCode.</h4>
+
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=HarryHopkinson.code-boilerplate">
+    <img src="https://vsmarketplacebadge.apphb.com/version-short/HarryHopkinson.code-boilerplate.svg?style=flat-square" alt="Version">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=HarryHopkinson.code-boilerplate">
+    <img src="https://vsmarketplacebadge.apphb.com/installs/HarryHopkinson.code-boilerplate.svg?style=flat-square" alt="Installs">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=HarryHopkinson.code-boilerplate">
+    <img src="https://vsmarketplacebadge.apphb.com/rating/HarryHopkinson.code-boilerplate.svg?style=flat-square" alt="Ratings">
+  </a>
+</p>
+
 ## Introduction
 This extension generates Boilerplate Hello World code based on your current language.
 
