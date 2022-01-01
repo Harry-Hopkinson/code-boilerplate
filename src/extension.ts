@@ -37,7 +37,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 	statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
 	statusBar.command = codeBoilerplate;
-
 	context.subscriptions.push(codeBoilerplate);
 }
 
