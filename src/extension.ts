@@ -38,7 +38,13 @@ export function activate(context: vscode.ExtensionContext, { subscriptions }: vs
 			});
 		}
 		else if (documentFileType === "c") {
-			return null;
+			vscode.window.activeTextEditor.edit(editBuilder => {
+				editBuilder.insert(new vscode.Position(0,0), '#include <stdio.h>');
+				editBuilder.insert(new vscode.Position(1,0), 'int main() {');
+				editBuilder.insert(new vscode.Position(2,4), 'printf("Hello World!");');
+				editBuilder.insert(new vscode.Position(3,4), 'return 0;');
+				editBuilder.insert(new vscode.Position(4,0), '}');
+			})
 		}
 		else if (documentFileType === "cpp") {
 			return null;
@@ -46,7 +52,6 @@ export function activate(context: vscode.ExtensionContext, { subscriptions }: vs
 		else if (documentFileType === "java") {
 			return null;
 		}
-
 		updateStatusBarItem();
 	}));
 
@@ -59,7 +64,6 @@ function updateStatusBarItem(): void {
 	myStatusBar.text = `$(new-file) Hello World!`;
 }
 
-// this method is called when your extension is deactivated
 export function deactivate() {
 	console.log("code-boilerplate is deactivated!");
 }
