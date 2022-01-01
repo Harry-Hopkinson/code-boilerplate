@@ -31,15 +31,17 @@ export function activate(context: vscode.ExtensionContext, { subscriptions }: vs
 		else if (documentFileType === "java") {
 			return null;
 		}
+
+		updateStatusBarItem();
 	}));
 
 	myStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
 	myStatusBar.command = codeBoilerplate;
-	context.subscriptions.push(codeBoilerplate);
+	subscriptions.push(myStatusBar);
 }
 
 function updateStatusBarItem(): void {
-	
+	myStatusBar.text = `$(new-file) Hello World!`;
 }
 
 // this method is called when your extension is deactivated
