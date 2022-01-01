@@ -1,13 +1,11 @@
 import * as vscode from 'vscode';
 import "typescript";
 
-let statusBar : vscode.StatusBarItem;
+let myStatusBar : vscode.StatusBarItem;
 
-export function activate(context: vscode.ExtensionContext) {
-	console.log("code-boilerplate is active!");
-	
-	const codeBoilerplate = vscode.commands.registerCommand('code-boilerplate.CodeBoilerPlate', () => {
-	
+export function activate(context: vscode.ExtensionContext, { subscriptions }: vscode.ExtensionContext) {
+	const codeBoilerplate = 'code-boilerplate.CodeBoilerPlate';
+	subscriptions.push(vscode.commands.registerCommand(codeBoilerplate, () => {
 		const documentFileType = vscode.window.activeTextEditor?.document.languageId;
 		const documentFileName = vscode.window.activeTextEditor?.document.fileName;
 
@@ -33,11 +31,15 @@ export function activate(context: vscode.ExtensionContext) {
 		else if (documentFileType === "java") {
 			return null;
 		}
-	});
+	}));
 
-	statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
-	statusBar.command = codeBoilerplate;
+	myStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+	myStatusBar.command = codeBoilerplate;
 	context.subscriptions.push(codeBoilerplate);
+}
+
+function updateStatusBarItem(): void {
+	
 }
 
 // this method is called when your extension is deactivated
