@@ -1,8 +1,8 @@
 {
   "name": "code-boilerplate",
-  "displayName": "Code Boilerplate",
+  "displayName": "Hello World",
   "description": "A vscode extension that generates a sample HelloWorld program based on the language of the file.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.63.0"
   },

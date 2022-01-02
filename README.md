@@ -6,7 +6,7 @@
     <img src="https://raw.githubusercontent.com/Harry-Hopkinson/code-boilerplate/master/images/icon.jpg">
   </a>
   <br>
-  code-boilerplate
+  Hello World
   <br>
 </h1>
 
