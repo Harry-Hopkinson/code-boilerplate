@@ -18,7 +18,7 @@
     "Snippets"
   ],
   "activationEvents": [
-    "onCommand:code-boilerplate.CodeBoilerplate"
+    "*"
   ],
   "main": "./dist/extension.js",
   "contributes": {
