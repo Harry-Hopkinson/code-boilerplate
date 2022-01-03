@@ -24,8 +24,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "code-boilerplate.helloWorld",
-        "title": "Hello World"
+        "command": "code-boilerplate.CodeBoilerplate",
+        "title": "Code Boilerplate"
       }
     ]
   },
