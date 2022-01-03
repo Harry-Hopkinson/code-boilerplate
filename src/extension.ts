@@ -1,10 +1,8 @@
 import * as vscode from 'vscode';
-import "typescript";
 
 let myStatusBar : vscode.StatusBarItem;
 
 export function activate(context: vscode.ExtensionContext, { subscriptions }: vscode.ExtensionContext) {
-	const codeBoilerplate = 'code-boilerplate.CodeBoilerPlate';
 	let codeBoilerplateCommand = vscode.commands.registerCommand('code-boilerplate.CodeBoilerplate', () => {
 		const documentFileType = vscode.window.activeTextEditor?.document.languageId;
 		const documentFileName = vscode.window.activeTextEditor?.document.fileName;
@@ -57,15 +55,16 @@ export function activate(context: vscode.ExtensionContext, { subscriptions }: vs
 	});
 
 	myStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
-	myStatusBar.command = codeBoilerplate;
+	myStatusBar.command = 'code-boilerplate.CodeBoilerplate';
 	context.subscriptions.push(myStatusBar);
 	context.subscriptions.push(codeBoilerplateCommand);
 }
 
 function updateStatusBarItem(): void {
 	myStatusBar.text = `$(new-file) Hello World!`;
+	myStatusBar.show();
 }
 
 export function deactivate() {
-	console.log("code-boilerplate is deactivated!");
+	myStatusBar.dispose();
 }
