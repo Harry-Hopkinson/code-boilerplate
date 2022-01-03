@@ -4,8 +4,9 @@ import "./constants";
 
 let myStatusBar : vscode.StatusBarItem;
 
-export function activate(context: vscode.ExtensionContext, { subscriptions }: vscode.ExtensionContext) {
-	let codeBoilerplateCommand = vscode.commands.registerCommand('code-boilerplate.CodeBoilerplate', () => {
+export function activate({ subscriptions }: vscode.ExtensionContext) {
+	const codeBoilerplateCommand = 'code-boilerplate.CodeBoilerplate';
+	subscriptions.push(vscode.commands.registerCommand(codeBoilerplateCommand, () => {
 		const documentFileType = vscode.window.activeTextEditor?.document.languageId;
 		const documentFileName = vscode.window.activeTextEditor?.document.fileName;
 		const documentFilePath = vscode.window.activeTextEditor?.document.fileName.split('/');
@@ -53,14 +54,15 @@ export function activate(context: vscode.ExtensionContext, { subscriptions }: vs
 		else if (documentFileType === "java") {
 			return null;
 		}
-		updateStatusBarItem();
-	});
+	}));
 
 	myStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
-	myStatusBar.command = 'code-boilerplate.CodeBoilerplate';
-	context.subscriptions.push(myStatusBar);
-	context.subscriptions.push(codeBoilerplateCommand);
-	myStatusBar.text = `$(new-file) Hello World!`;
+	myStatusBar.command = codeBoilerplateCommand;
+	subscriptions.push(myStatusBar);
+
+	subscriptions.push(vscode.window.onDidChangeActiveTextEditor(updateStatusBarItem));
+	subscriptions.push(vscode.window.onDidChangeTextEditorSelection(updateStatusBarItem));
+	updateStatusBarItem();
 }
 
 function updateStatusBarItem(): void {
