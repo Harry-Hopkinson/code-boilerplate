@@ -58,8 +58,8 @@ export function activate(context: vscode.ExtensionContext, { subscriptions }: vs
 
 	myStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
 	myStatusBar.command = codeBoilerplate;
-	subscriptions.push(myStatusBar);
-	subscriptions.push(codeBoilerplateCommand);
+	context.subscriptions.push(myStatusBar);
+	context.subscriptions.push(codeBoilerplateCommand);
 }
 
 function updateStatusBarItem(): void {
