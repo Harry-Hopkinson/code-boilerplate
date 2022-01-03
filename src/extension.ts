@@ -1,4 +1,6 @@
 import * as vscode from 'vscode';
+import "typescript";
+import "./constants";
 
 let myStatusBar : vscode.StatusBarItem;
 
@@ -58,6 +60,7 @@ export function activate(context: vscode.ExtensionContext, { subscriptions }: vs
 	myStatusBar.command = 'code-boilerplate.CodeBoilerplate';
 	context.subscriptions.push(myStatusBar);
 	context.subscriptions.push(codeBoilerplateCommand);
+	myStatusBar.text = `$(new-file) Hello World!`;
 }
 
 function updateStatusBarItem(): void {
