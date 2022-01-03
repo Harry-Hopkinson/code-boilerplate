@@ -5,9 +5,10 @@ let myStatusBar : vscode.StatusBarItem;
 
 export function activate(context: vscode.ExtensionContext, { subscriptions }: vscode.ExtensionContext) {
 	const codeBoilerplate = 'code-boilerplate.CodeBoilerPlate';
-	subscriptions.push(vscode.commands.registerCommand(codeBoilerplate, () => {
+	let codeBoilerplateCommand = vscode.commands.registerCommand('code-boilerplate.CodeBoilerplate', () => {
 		const documentFileType = vscode.window.activeTextEditor?.document.languageId;
 		const documentFileName = vscode.window.activeTextEditor?.document.fileName;
+		const documentFilePath = vscode.window.activeTextEditor?.document.fileName.split('/');
 
 		vscode.window.showInformationMessage("Generating your Code Boilerplate... ⌛")
 		if (documentFileType === "javascript") {
@@ -53,11 +54,12 @@ export function activate(context: vscode.ExtensionContext, { subscriptions }: vs
 			return null;
 		}
 		updateStatusBarItem();
-	}));
+	});
 
 	myStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
 	myStatusBar.command = codeBoilerplate;
 	subscriptions.push(myStatusBar);
+	subscriptions.push(codeBoilerplateCommand);
 }
 
 function updateStatusBarItem(): void {

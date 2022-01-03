@@ -13,10 +13,12 @@
     "url": "https://github.com/Harry-Hopkinson/code-boilerplate.git"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Programming Languages",
+    "Snippets"
   ],
   "activationEvents": [
-    "onCommand:code-boilerplate.helloWorld"
+    "onCommand:code-boilerplate.CodeBoilerplate"
   ],
   "main": "./dist/extension.js",
   "contributes": {
