@@ -37,7 +37,9 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 			});
 		}
 		else if (documentFileType === "cpp") {
-			return null;
+			vscode.window.activeTextEditor.edit(editBuilder => {
+				editBuilder.insert(new vscode.Position(0, 0), '#include <iostream>\n\nusing namespace std;\n\nint main()\n{\n\tcout << "Hello World!";\n\treturn 0;\n}');
+			});
 		}
 		else if (documentFileType === "java") {
 			vscode.window.activeTextEditor.edit(editBuilder => {
