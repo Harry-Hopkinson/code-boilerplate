@@ -28,14 +28,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		}
 		else if (documentFileType === "csharp") {
 			vscode.window.activeTextEditor.edit(editBuilder => {
-				editBuilder.insert(new vscode.Position(0,0), 'using System;');
-				editBuilder.insert(new vscode.Position(0,3), 'namespace HelloWorld {');
-				editBuilder.insert(new vscode.Position(6,4), 'class HelloWorld {');
-				editBuilder.insert(new vscode.Position(9,8), 'static void Main(string[] args) {');
-				editBuilder.insert(new vscode.Position(12,12), 'Console.WriteLine("Hello World!");');
-				editBuilder.insert(new vscode.Position(14,8), '}');
-				editBuilder.insert(new vscode.Position(15,4), '}');
-				editBuilder.insert(new vscode.Position(16,0), '}');
+				editBuilder.insert(new vscode.Position(0, 0), 'using System;\n\nnamespace Program\n{\n\tclass Program\n\t{\n\t\tstatic void Main(string[] args)\n\t\t{\n\t\t\tConsole.WriteLine("Hello World!");\n\t\t}\n\t}\n}');
 			});
 		}
 		else if (documentFileType === "c") {
