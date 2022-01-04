@@ -33,12 +33,8 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		}
 		else if (documentFileType === "c") {
 			vscode.window.activeTextEditor.edit(editBuilder => {
-				editBuilder.insert(new vscode.Position(0,0), '#include <stdio.h>');
-				editBuilder.insert(new vscode.Position(1,0), 'int main() {');
-				editBuilder.insert(new vscode.Position(2,4), 'printf("Hello World!");');
-				editBuilder.insert(new vscode.Position(3,4), 'return 0;');
-				editBuilder.insert(new vscode.Position(4,0), '}');
-			})
+				editBuilder.insert(new vscode.Position(0, 0), '#include <stdio.h>\n\nint main()\n{\n\tprintf("Hello World!");\n\treturn 0;\n}');
+			});
 		}
 		else if (documentFileType === "cpp") {
 			return null;
