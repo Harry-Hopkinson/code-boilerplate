@@ -46,6 +46,11 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 				editBuilder.insert(new vscode.Position(0, 0), 'public class Main {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println("Hello World!");\n\t}\n}');
 			});
 		}
+		else if (documentFileType === "kotlin") {
+			vscode.window.activeTextEditor.edit(editBuilder => {
+				editBuilder.insert(new vscode.Position(0, 0), 'fun main() {\n\tprintln("Hello World!")\n}');
+			});
+		}
 		vscode.window.showInformationMessage("Code Boilerplate Generated! 🎉");
 	}));
 
