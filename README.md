@@ -27,6 +27,7 @@
 ## Introduction
 
 This extension generates Boilerplate Hello World code based on your current language.
+There is a [CLI Version as well](https://github.com/Harry-Hopkinson/code-boilerplate-cli)
 
 ## Usage
 
