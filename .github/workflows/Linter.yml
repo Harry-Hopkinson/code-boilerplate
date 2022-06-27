@@ -20,7 +20,7 @@ jobs:
           yarn
       - name: Prettier Linting ✏️
         run: |
-          yarn prettier
+          yarn lint
       - name: Eslint Linting ✏️
         run: |
           yarn eslint
