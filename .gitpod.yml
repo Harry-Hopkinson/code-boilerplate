@@ -1,3 +1,3 @@
 tasks:
-    - init: npm install && npm run compile
-      command: npm run watch
+  - init: yarn && yarn compile
+    command: yarn watch

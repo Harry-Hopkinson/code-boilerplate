@@ -2,25 +2,25 @@ name: "Lint"
 description: "Lint TypeScript Code"
 
 inputs:
-    node_version:
-        description: "Version of Node to install"
-        required: true
+  node_version:
+    description: "Version of Node to install"
+    required: true
 
 runs:
-    using: "composite"
-    steps:
-        - name: Install Node
-          uses: actions/setup-node@v2
-          with:
-              node-version: ${{ inputs.node_version }}
-              cache: "npm"
+  using: "composite"
+  steps:
+    - name: Install Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ inputs.node_version }}
+        cache: "npm"
 
-        - name: Lint TypeScript code
-          run: npm run lint
-          shell: bash
+    - name: Lint TypeScript code
+      run: yarn lint
+      shell: bash
 
-        - name: Check TypeScript format
-          run: |
-              npm install -g prettier
-              prettier --check "src/**/*.ts"
-          shell: bash
+    - name: Check TypeScript format
+      run: |
+        npm install -g prettier
+        prettier --check "src/**/*.ts"
+      shell: bash
