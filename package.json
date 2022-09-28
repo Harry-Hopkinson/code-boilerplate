@@ -4,7 +4,7 @@
   "description": "A vscode extension that generates a sample HelloWorld program based on the language of the file.",
   "version": "1.0.0",
   "engines": {
-    "vscode": "1.71.0"
+    "vscode": "1.71.2"
   },
   "publisher": "HarryHopkinson",
   "icon": "images/icon.jpg",
