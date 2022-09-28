@@ -120,6 +120,37 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
               'package main\n\nimport "fmt"\n\nfunc main() {\n\tfmt.Println("Hello World!")\n}'
             );
           });
+
+        case "lua":
+          vscode.window.activeTextEditor.edit((editBuilder) => {
+            editBuilder.insert(
+              new vscode.Position(0, 0),
+              'print("Hello World")'
+            );
+          });
+          
+          case "vb":
+            vscode.window.activeTextEditor.edit((editBuilder) => {
+              editBuilder.insert(
+                new vscode.Position(0, 0),
+                'Imports System\nModule Module1\n\tSub Main()\n\t\tConsole.WriteLine("Hello World!")\n\t\tConsole.ReadLine()\n\tEnd Sub'
+              );
+            });
+
+          /* New Languages go here
+
+          **EXAMPLE**
+          
+          case "LANGUAGE IDENTIFIER":
+            vscode.window.activeTextEditor.edit((editBuilder) => {
+              editBuilder.insert(
+                new vscode.Position(0, 0),
+                'HELLO WORLD'
+              );
+            });
+
+          */
+
           vscode.window.showInformationMessage(
             "Code Boilerplate Generated! 🎉"
           );
