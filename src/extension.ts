@@ -128,14 +128,14 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
               'print("Hello World")'
             );
           });
-          
-          case "vb":
-            vscode.window.activeTextEditor.edit((editBuilder) => {
-              editBuilder.insert(
-                new vscode.Position(0, 0),
-                'Imports System\nModule Module1\n\tSub Main()\n\t\tConsole.WriteLine("Hello World!")\n\t\tConsole.ReadLine()\n\tEnd Sub'
-              );
-            });
+
+        case "vb":
+          vscode.window.activeTextEditor.edit((editBuilder) => {
+            editBuilder.insert(
+              new vscode.Position(0, 0),
+              'Imports System\nModule Module1\n\tSub Main()\n\t\tConsole.WriteLine("Hello World!")\n\t\tConsole.ReadLine()\n\tEnd Sub'
+            );
+          });
 
           /* New Languages go here
 

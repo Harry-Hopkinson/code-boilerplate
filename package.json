@@ -2,9 +2,9 @@
   "name": "code-boilerplate",
   "displayName": "Code Generator",
   "description": "A vscode extension that generates a sample HelloWorld program based on the language of the file.",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "engines": {
-    "vscode": "^1.63.0"
+    "vscode": "1.71.0"
   },
   "publisher": "HarryHopkinson",
   "icon": "images/icon.jpg",
@@ -49,30 +49,25 @@
     "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
     "build": "webpack --mode production --devtool hidden-source-map",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "yarn run compile-tests && npm run compile && npm run lint",
     "lint": "prettier --check .",
-    "eslint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "lint:fix": "prettier --write ."
   },
   "devDependencies": {
-    "@types/glob": "7.2.0",
-    "@types/mocha": "9.1.1",
-    "@types/node": "16.11.43",
-    "@types/vscode": "1.69.0",
-    "@typescript-eslint/eslint-plugin": "5.30.5",
-    "@typescript-eslint/parser": "5.30.5",
+    "@types/glob": "8.0.0",
+    "@types/mocha": "10.0.0",
+    "@types/node": "18.7.23",
+    "@types/vscode": "1.71.0",
+    "@typescript-eslint/eslint-plugin": "5.38.1",
+    "@typescript-eslint/parser": "5.38.1",
     "@vscode/test-electron": "2.1.5",
-    "eslint": "8.20.0",
     "glob": "8.0.3",
     "mocha": "10.0.0",
     "prettier": "2.7.1",
-    "ts-loader": "9.3.1",
-    "typescript": "4.7.4",
+    "ts-loader": "9.4.1",
+    "typescript": "4.8.4",
     "vscode": "1.1.37",
     "watch": "1.0.2",
-    "webpack": "5.73.0",
+    "webpack": "5.74.0",
     "webpack-cli": "4.10.0"
   }
 }
