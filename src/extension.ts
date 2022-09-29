@@ -35,10 +35,6 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
     vscode.commands.registerCommand(codeBoilerplateCommand, () => {
       const documentFileType =
         vscode.window.activeTextEditor?.document.languageId;
-      const documentFileName =
-        vscode.window.activeTextEditor?.document.fileName;
-      const documentFilePath =
-        vscode.window.activeTextEditor?.document.fileName.split("/");
 
       switch (documentFileType) {
         case "javascript":
@@ -144,7 +140,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
               'alert "Hello, World!"\n'
             );
           });
-        
+
         case "cuda-cpp":
           vscode.window.activeTextEditor.edit((editBuilder) => {
             editBuilder.insert(
@@ -152,8 +148,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
               '#include <stdio.h>\n\nconst int N = 16;\nconst int blocksize = 16;\n\n__global__\nvoid hello(char *a, int *b)\n{\n\ta[threadIdx.x] += b[threadIdx.x];\n}\n\nint main()\n{\n\tchar a[N] = "Hello \\0\\0\\0\\0\\0\\0";\n\tint b[N] = {15, 10, 6, 0, -11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};\n\tchar *ad;\n\n\tint *bd;\n\tconst int csize = N*sizeof(char);\n\tconst int isize = N*sizeof(int);\n\n\tprintf("%s", a);\n\n\tcudaMalloc( (void**)&ad, csize ); \n\tcudaMalloc( (void**)&bd, isize ); \n\tcudaMemcpy( ad, a, csize, cudaMemcpyHostToDevice ); \n\tcudaMemcpy( bd, b, isize, cudaMemcpyHostToDevice ); \n\n\tdim3 dimBlock( blocksize, 1 );\n\tdim3 dimGrid( 1, 1 );\n\thello<<<dimGrid, dimBlock>>>(ad, bd);\n\tcudaMemcpy( a, ad, csize, cudaMemcpyDeviceToHost ); \n\tcudaFree( ad );\n\tcudaFree( bd );\n\n\tprintf("%s", a);\n\treturn EXIT_SUCCESS;\n}'
             );
           });
-        
-        
+
         case "css":
           vscode.window.activeTextEditor.edit((editBuilder) => {
             editBuilder.insert(
@@ -161,7 +156,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
               'body:before {\n\tcontent: "Hello World";\n}'
             );
           });
-        
+
         case "fsharp":
           vscode.window.activeTextEditor.edit((editBuilder) => {
             editBuilder.insert(
@@ -169,7 +164,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
               'printf "Hello World!"\n'
             );
           });
-        
+
         case "groovy":
           vscode.window.activeTextEditor.edit((editBuilder) => {
             editBuilder.insert(
@@ -177,15 +172,15 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
               'println "Hello World"\n'
             );
           });
-        
+
         case "latex":
           vscode.window.activeTextEditor.edit((editBuilder) => {
             editBuilder.insert(
               new vscode.Position(0, 0),
-              '\\documentclass{article}\n\\begin{document}\nHello World!\n\\end{document}'
+              "\\documentclass{article}\n\\begin{document}\nHello World!\n\\end{document}"
             );
           });
-        
+
         case "r":
           vscode.window.activeTextEditor.edit((editBuilder) => {
             editBuilder.insert(
@@ -193,7 +188,6 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
               'cat("Hello world")\n'
             );
           });
-        
 
         case "ruby":
           vscode.window.activeTextEditor.edit((editBuilder) => {
@@ -210,8 +204,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
               'fn main() {\n\tprintln!("Hello World!");\n}'
             );
           });
-          
-        
+
         case "swift":
           vscode.window.activeTextEditor.edit((editBuilder) => {
             editBuilder.insert(
