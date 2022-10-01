@@ -5,6 +5,10 @@ on:
     branches:
       - main
       - master
+  pull-request:
+    branches:
+      - main
+      - master
 
 jobs:
   build:
