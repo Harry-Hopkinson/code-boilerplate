@@ -2,7 +2,13 @@ name: Windows Compiler 🏁
 
 on:
   push:
+    branches:
+      - main
+      - master
   pull-request:
+    branches:
+      - main
+      - master
 
 jobs:
   build:
