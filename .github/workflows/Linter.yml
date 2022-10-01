@@ -2,9 +2,7 @@ name: Linter ✏️
 
 on:
   push:
-    branches:
-      - main
-      - master
+  pull-request:
 
 jobs:
   build:
