@@ -3,7 +3,7 @@
 <h1 align="center">
   <br>
   <a href="https://marketplace.visualstudio.com/items?itemName=HarryHopkinson.code-boilerplate&ssr=false#overview">
-    <img src="https://raw.githubusercontent.com/Harry-Hopkinson/code-boilerplate/master/images/icon.jpg">
+    <img src="./images/icon.jpg">
   </a>
   <br>
   Code Generator
