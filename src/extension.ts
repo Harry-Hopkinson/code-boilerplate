@@ -213,6 +213,23 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
             );
           });
 
+        case "markdown":
+          vscode.window.activeTextEditor.edit((editBuilder) => {
+            editBuilder.insert(
+              new vscode.Position(0, 0),
+              '# Hello World!'
+            );
+          });
+        
+        case "yaml":
+          vscode.window.activeTextEditor.edit((editBuilder) => {
+            editBuilder.insert(
+              new vscode.Position(0, 0),
+              "---\nquestion: Hello, world!\nbuttons:\n  - Exit: exit\nmandatory: True\n---"
+            );
+          });
+  
+
           /* New Languages go here
 
           **EXAMPLE**
