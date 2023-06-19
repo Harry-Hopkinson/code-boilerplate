@@ -61,6 +61,6 @@
     "vscode": "1.1.37",
     "watch": "1.0.2",
     "webpack": "5.75.0",
-    "webpack-cli": "5.0.1"
+    "webpack-cli": "5.1.4"
   }
 }
